@@ -40,6 +40,7 @@ const App = () => {
     }
   ]
   const [render,setRender]=useState([...data]);
+  const [readMore ,setReadMore]=useState(false);
   
   function removeFn(index){
     const filteredData=[...render];
@@ -56,9 +57,12 @@ const App = () => {
             render.map((item,index)=>(
               <div className="single-tour" key={index}>
                 <h2>{item.name}</h2>
-                <p className="tour-info">{item.info}</p>
+                <p id={`tour-item-para-${item.id}`}>
+                         {readMore ? item.info : `${item.info.substring(0,200)}...`}
+                         <button onClick={()=>setReadMore(!readMore)} id={`see-more-${item.id}`}>{readMore ? 'Show less' : 'See more'}</button>
+                     </p>
                 <p className="tour-price">Price:-${item.price}</p>
-                <button className="delete-btn" onClick={()=>removeFn(index)}>Delete {item.name}</button>
+                <button className={`delete-btn-${item.id}`} onClick={()=>removeFn(index)}>Delete {item.name}</button>
               </div>
             ))
           }
