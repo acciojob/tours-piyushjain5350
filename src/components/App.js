@@ -62,7 +62,7 @@ const App = () => {
                          <button onClick={()=>setReadMore(!readMore)} id={`see-more-${item.id}`}>{readMore ? 'Show less' : 'See more'}</button>
                      </p>
                 <p className="tour-price">Price:-${item.price}</p>
-                <button className={`delete-btn-${item.id}`} onClick={()=>removeFn(index)}>Delete {item.name}</button>
+                <button className={`delete-btn-${item.id}`}  id={`delete-btn-${item.id}`} onClick={()=>removeFn(index)}>Delete {item.name}</button>
               </div>
             ))
           }
