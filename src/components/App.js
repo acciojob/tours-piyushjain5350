@@ -58,7 +58,7 @@ const App = () => {
                 <h2>{item.name}</h2>
                 <p className="tour-info">{item.info}</p>
                 <p className="tour-price">Price:-${item.price}</p>
-                <button onClick={()=>removeFn(index)}>Delete {item.name}</button>
+                <button className="delete-btn" onClick={()=>removeFn(index)}>Delete {item.name}</button>
               </div>
             ))
           }
